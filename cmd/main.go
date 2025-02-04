@@ -11,13 +11,13 @@ import (
 )
 
 func main() {
-  utils.LoadEnvVariables()
-  store := storage.NewStorage()
+	utils.LoadEnvVariables()
+	store := storage.NewStorage()
 
-  engine := gin.Default()
+	engine := gin.Default()
 
-  r := routes.SetupRoutes(store, engine)
-  port:= utils.Must(utils.GetEnv("PORT"))
+	r := routes.SetupRoutes(store, engine)
+	port := utils.Must(utils.GetEnv("PORT"))
 
-  r.Engine.Run(strings.Join([]string{":", port}, ""))
+	r.Engine.Run(strings.Join([]string{":", port}, ""))
 }
