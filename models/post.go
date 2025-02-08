@@ -4,6 +4,11 @@ import "gorm.io/gorm"
 
 type Post struct {
 	gorm.Model
-  Title string `json:"title" binding:"required"`
-  Body  string `json:"body" binding:"required"`
+  Title string `binding:"required"`
+  Body  string `binding:"required"`
+}
+
+type CreatePostDTO struct {
+  Title string
+  Body  string
 }
