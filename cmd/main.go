@@ -14,6 +14,7 @@ func main() {
 	utils.LoadEnvVariables()
 	store := storage.NewStorage()
 
+  gin.SetMode("release")
 	engine := gin.Default()
 
 	r := routes.SetupRoutes(store, engine)
